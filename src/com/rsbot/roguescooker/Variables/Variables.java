@@ -13,6 +13,7 @@ import org.powerbot.game.api.methods.tab.Skills;
 public class Variables {
     public static boolean guiDisposed;
     public static long startTime = System.currentTimeMillis();
+    public static String Status;
 
     public static Mouse.Speed USE;
     public static Mouse.Speed VERY_FAST = Mouse.Speed.VERY_FAST;
@@ -48,6 +49,9 @@ public class Variables {
         return getCurrentLevel() - startLevel;
     }
 
+   public static int getLevelsGainedPerHour() {
+       return (int) ((getLevelsGained() * 3600000D) / (System.currentTimeMillis() - startTime));
+   }
     public static int getExperiencePerHour() {
         return (int) ((getExperienceGained() * 3600000D) / (System.currentTimeMillis() - startTime));
     }

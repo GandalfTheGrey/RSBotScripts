@@ -1,6 +1,7 @@
 package com.rsbot.roguescooker.Utils;
 
 import com.rsbot.roguescooker.Variables.Variables;
+import com.rsbot.roguescooker.Enums.FoodTypes;
 
 /**
  * @author Romi Grace
@@ -105,50 +106,73 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        if (jComboBox1.toString().equalsIgnoreCase("shrimps")) {
-            Variables.foodID = 30;
-        } else if (jComboBox1.toString().equalsIgnoreCase(("anchovies"))) {
-            Variables.foodID = 40;
-        } else if (jComboBox1.toString().equalsIgnoreCase(("sardine"))) {
-            Variables.foodID = 50;
-        } else if (jComboBox1.toString().equalsIgnoreCase("herring")) {
-            Variables.foodID = 60;
-        } else if (jComboBox1.toString().equalsIgnoreCase("mackerel")) {
-            Variables.foodID = 70;
-        } else if (jComboBox1.toString().equalsIgnoreCase(("trout"))) {
-            Variables.foodID = 80;
-        } else if (jComboBox1.toString().equalsIgnoreCase("cod")) {
-            Variables.foodID = 90;
-        } else if (jComboBox1.toString().equalsIgnoreCase("pike")) {
-            Variables.foodID = 100;
-        } else if (jComboBox1.toString().equalsIgnoreCase("salmon")) {
-            Variables.foodID = 110;
-        } else if (jComboBox1.toString().equalsIgnoreCase(("tuna"))) {
-            Variables.foodID = 120;
-        } else if (jComboBox1.toString().equalsIgnoreCase("lobster")) {
-            Variables.foodID = 130;
-        } else if (jComboBox1.toString().equalsIgnoreCase("bass")) {
-            Variables.foodID = 140;
-        } else if (jComboBox1.toString().equalsIgnoreCase("swordfish")) {
-            Variables.foodID = 150;
-        } else if (jComboBox1.toString().equalsIgnoreCase("monkfish")) {
-            Variables.foodID = 160;
-        } else if (jComboBox1.toString().equalsIgnoreCase("shark")) {
-            Variables.foodID = 170;
-        } else if (jComboBox1.toString().equalsIgnoreCase("sea turtle")) {
-            Variables.foodID = 180;
-        } else if (jComboBox1.toString().equalsIgnoreCase("manta ray")) {
-            Variables.foodID = 190;
-        } else if (jComboBox1.toString().equalsIgnoreCase("rocktail")) {
-            Variables.foodID = 200;
+        switch (jComboBox1.toString().toLowerCase()) {
+            case "shrimp":
+                Variables.foodID = FoodTypes.Foods.Shrimp.getInt();
+                break;
+            case "anchovies":
+                Variables.foodID = FoodTypes.Foods.Anchovies.getInt();
+                break;
+            case "sardine":
+                Variables.foodID = FoodTypes.Foods.Sardine.getInt();
+                break;
+            case "herring":
+                Variables.foodID = FoodTypes.Foods.Herring.getInt();
+                break;
+            case "mackerel":
+                Variables.foodID = FoodTypes.Foods.Mackerel.getInt();
+                break;
+            case "trout":
+                Variables.foodID = FoodTypes.Foods.Trout.getInt();
+                break;
+            case "cod":
+                Variables.foodID = FoodTypes.Foods.Cod.getInt();
+                break;
+            case "pike":
+                Variables.foodID = FoodTypes.Foods.Pike.getInt();
+                break;
+            case "salmon":
+                Variables.foodID = FoodTypes.Foods.Salmon.getInt();
+                break;
+            case "tuna":
+                Variables.foodID = FoodTypes.Foods.Tuna.getInt();
+                break;
+            case "lobster":
+                Variables.foodID = FoodTypes.Foods.Lobster.getInt();
+                break;
+            case "bass":
+                Variables.foodID = FoodTypes.Foods.Bass.getInt();
+                break;
+            case "swordfish":
+                Variables.foodID = FoodTypes.Foods.Swordfish.getInt();
+                break;
+            case "monkfish":
+                Variables.foodID = FoodTypes.Foods.Monkfish.getInt();
+                break;
+            case "shark":
+                Variables.foodID = FoodTypes.Foods.Shark.getInt();
+                break;
+            case "sea turtle":
+                Variables.foodID = FoodTypes.Foods.Turtle.getInt();
+                break;
+            case "manta ray":
+                Variables.foodID = FoodTypes.Foods.MantaRay.getInt();
+                break;
+            case "rocktail":
+                Variables.foodID = FoodTypes.Foods.Rocktail.getInt();
+                break;
         }
 
-        if (jComboBox2.toString().equalsIgnoreCase("normal")) {
-            Variables.USE = Variables.NORMAL;
-        } else if (jComboBox2.toString().equalsIgnoreCase("fast")) {
-            Variables.USE = Variables.FAST;
-        } else if (jComboBox2.toString().equalsIgnoreCase("very fast")) {
-            Variables.USE = Variables.VERY_FAST;
+        switch (jComboBox2.toString().toLowerCase()) {
+            case "normal":
+                Variables.USE = Variables.NORMAL;
+                break;
+            case "fast":
+                Variables.USE = Variables.FAST;
+                break;
+            case "very fast":
+                Variables.USE = Variables.VERY_FAST;
+                break;
         }
 
         Variables.guiDisposed = true;
