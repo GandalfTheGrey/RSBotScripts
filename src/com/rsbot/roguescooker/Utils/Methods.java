@@ -1,6 +1,7 @@
 package com.rsbot.roguescooker.Utils;
 
 import org.powerbot.core.script.methods.Players;
+import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.util.Timer;
 
 /**
@@ -22,5 +23,11 @@ public class Methods {
         return false;
     }
 
+    public static boolean hasSelectedFood() {
+        return Inventory.isItemSelected();
+    }
 
+    public static boolean hasItems(int ID) {
+        return Inventory.contains(ID);
+    }
 }

@@ -1,5 +1,9 @@
 package com.rsbot.roguescooker.Nodes;
 
+import com.rsbot.roguescooker.Utils.Methods;
+import com.rsbot.roguescooker.Variables.Variables;
+import org.powerbot.core.script.job.state.Node;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Romi Grace
@@ -7,5 +11,14 @@ package com.rsbot.roguescooker.Nodes;
  * Time: 09:08
  * To change this template use File | Settings | File Templates.
  */
-public class Cooking {
+public class Cooking extends Node {
+    public boolean activate() {
+        return Variables.guiDisposed
+                && Methods.hasItems(10)
+                && !Methods.isCooking();
+    }
+
+    public void execute() {
+
+    }
 }

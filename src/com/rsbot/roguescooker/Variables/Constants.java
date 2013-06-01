@@ -8,4 +8,5 @@ package com.rsbot.roguescooker.Variables;
  * To change this template use File | Settings | File Templates.
  */
 public class Constants {
+
 }
