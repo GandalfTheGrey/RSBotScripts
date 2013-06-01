@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a2188c9-6d69-42f1-8556-3bcbb6ad5101" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RSBot.iml" afterPath="$PROJECT_DIR$/RSBot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RSBot.iws" />
@@ -277,7 +275,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="0" width="1346" height="728" extended-state="0" />
+    <frame x="10" y="0" width="1346" height="728" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -362,13 +360,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/rsbot/roguescooker/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rsbot/roguescooker/Variables/Variables.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="22" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
@@ -407,6 +398,13 @@
     <entry file="file://$PROJECT_DIR$/src/com/rsbot/roguescooker/Nodes/Sleeping.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="21" selection-start="217" selection-end="217" vertical-scroll-proportion="0.2797075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rsbot/roguescooker/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="24" selection-start="120" selection-end="120" vertical-scroll-proportion="0.18647167">
           <folding />
         </state>
       </provider>
