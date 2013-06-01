@@ -1,5 +1,8 @@
 package com.rsbot.roguescooker.Utils;
 
+import org.powerbot.core.script.methods.Players;
+import org.powerbot.game.api.util.Timer;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Romi Grace
@@ -8,4 +11,16 @@ package com.rsbot.roguescooker.Utils;
  * To change this template use File | Settings | File Templates.
  */
 public class Methods {
+
+    public static boolean isCooking() {
+        Timer timer = new Timer(800);
+        while (timer.isRunning()) {
+            if (Players.getLocal().getAnimation() != -1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }
