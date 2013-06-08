@@ -1,20 +1,20 @@
-package com.rsbot.roguescooker.Utils;
+package com.rsbot.roguescooker.utils;
 
-import org.powerbot.core.script.methods.Players;
+import org.powerbot.game.api.methods.Widgets;
+import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.util.Timer;
+import org.powerbot.game.api.wrappers.widget.WidgetChild;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Romi Grace
- * Date: 01/06/13
- * Time: 09:08
- * To change this template use File | Settings | File Templates.
- */
 public class Methods {
+    public static final WidgetChild COOK_BUTTON = Widgets.get(275, 40);
+
+    public static boolean cookFood() {
+       return (COOK_BUTTON != null && COOK_BUTTON.visible());
+    }
 
     public static boolean isCooking() {
-        Timer timer = new Timer(800);
+        Timer timer = new Timer(1000);
         while (timer.isRunning()) {
             if (Players.getLocal().getAnimation() != -1) {
                 return true;

@@ -1,28 +1,19 @@
-package com.rsbot.roguescooker.Nodes;
+package com.rsbot.roguescooker.nodes;
 
-import com.rsbot.roguescooker.Utils.Methods;
-import com.rsbot.roguescooker.Variables.Variables;
+import com.rsbot.roguescooker.utils.Methods;
+import com.rsbot.roguescooker.vars.Variables;
 import org.powerbot.core.script.job.state.Node;
-import org.powerbot.core.script.methods.Players;
-import org.powerbot.game.api.methods.node.SceneEntities;
+import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.wrappers.node.Item;
-import org.powerbot.game.api.wrappers.node.SceneObject;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Romi Grace
- * Date: 01/06/13
- * Time: 09:08
- * To change this template use File | Settings | File Templates.
- */
 public class SelectFood extends Node {
 
     public boolean activate() {
         return Variables.guiDisposed
                 && Methods.hasItems(Variables.foodID)
                 && !Players.getLocal().isMoving()
-                && !Methods.hasSelectedFood()
+                && !Methods.hasSelectedFood(Variables.foodID)
                 && !Methods.isCooking();
     }
 
@@ -31,7 +22,7 @@ public class SelectFood extends Node {
 
         if (foodSelect != null) {
             if (foodSelect.getWidgetChild().isOnScreen()) {
-                if (!Methods.hasSelectedFood()) {
+                if (!Methods.hasSelectedFood(Variables.foodID)) {
                     foodSelect.getWidgetChild().click(true);
                 }
             }

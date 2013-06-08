@@ -1,12 +1,5 @@
-package com.rsbot.roguescooker.Enums;
+package com.rsbot.roguescooker.enums;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Romi Grace
- * Date: 01/06/13
- * Time: 17:29
- * To change this template use File | Settings | File Templates.
- */
 public class FoodTypes {
 
     public static enum Foods {
@@ -21,7 +14,7 @@ public class FoodTypes {
             this.id = id;
         }
 
-        public int getInt() {
+        public int getID() {
             return id;
         }
     }

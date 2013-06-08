@@ -1,15 +1,9 @@
-package com.rsbot.roguescooker.Nodes;
+package com.rsbot.roguescooker.nodes;
 
-import com.rsbot.roguescooker.Utils.Methods;
-import com.rsbot.roguescooker.Variables.Variables;
+import com.rsbot.roguescooker.utils.Methods;
+import com.rsbot.roguescooker.vars.Variables;
 import org.powerbot.core.script.job.state.Node;
-/**
- * Created with IntelliJ IDEA.
- * User: Romi Grace
- * Date: 01/06/13
- * Time: 09:08
- * To change this template use File | Settings | File Templates.
- */
+
 public class Sleeping extends Node {
     public boolean activate() {
         return Variables.guiDisposed
@@ -17,6 +11,6 @@ public class Sleeping extends Node {
     }
 
     public void execute() {
-
+        sleep(100, 200);
     }
 }

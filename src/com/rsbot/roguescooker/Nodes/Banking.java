@@ -1,29 +1,19 @@
-package com.rsbot.roguescooker.Nodes;
+package com.rsbot.roguescooker.nodes;
 
-import com.rsbot.roguescooker.Utils.Methods;
-import com.rsbot.roguescooker.Variables.Variables;
+import com.rsbot.roguescooker.utils.Methods;
+import com.rsbot.roguescooker.vars.Variables;
 import org.powerbot.core.script.job.state.Node;
-import org.powerbot.core.script.methods.Calculations;
-import org.powerbot.core.script.methods.Players;
+import org.powerbot.game.api.methods.Calculations;
 import org.powerbot.game.api.methods.Walking;
 import org.powerbot.game.api.methods.interactive.NPCs;
-import org.powerbot.game.api.methods.node.SceneEntities;
+import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.methods.widget.Bank;
 import org.powerbot.game.api.methods.widget.Camera;
 import org.powerbot.game.api.wrappers.interactive.NPC;
-import org.powerbot.game.api.wrappers.node.SceneObject;
-import org.powerbot.game.client.RSNPC;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Romi Grace
- * Date: 01/06/13
- * Time: 09:08
- * To change this template use File | Settings | File Templates.
- */
 public class Banking extends Node {
-    final NPC theBanker = NPCs.getNearest("Banker");
+    final NPC theBanker = NPCs.getNearest(14707);
 
     public boolean activate() {
         return Variables.guiDisposed
@@ -47,7 +37,7 @@ public class Banking extends Node {
         if (theBanker != null) {
             if (theBanker.isOnScreen()) {
                 if (!Bank.isOpen()) {
-                    Variables.Status = ("Interacting with " + theBanker.getName().toString());
+                    Variables.Status = ("Interacting with " + theBanker.getName());
                     theBanker.interact("Bank");
                 }
             }

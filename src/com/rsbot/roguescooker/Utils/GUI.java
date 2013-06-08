@@ -1,16 +1,13 @@
-package com.rsbot.roguescooker.Utils;
+package com.rsbot.roguescooker.utils;
 
-import com.rsbot.roguescooker.Variables.Variables;
-import com.rsbot.roguescooker.Enums.FoodTypes;
+import com.rsbot.roguescooker.vars.Variables;
+import com.rsbot.roguescooker.enums.FoodTypes;
 
-/**
- * @author Romi Grace
- */
 public class GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form GUI
-     */
+     */                                //Take control :D Do what you need
     public GUI() {
         initComponents();
     }
@@ -32,7 +29,9 @@ public class GUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+        setTitle("Cooker");
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton1.setText("Start Script");
@@ -108,58 +107,58 @@ public class GUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         switch (jComboBox1.toString().toLowerCase()) {
             case "shrimp":
-                Variables.foodID = FoodTypes.Foods.Shrimp.getInt();
+                Variables.foodID = FoodTypes.Foods.Shrimp.getID();
                 break;
             case "anchovies":
-                Variables.foodID = FoodTypes.Foods.Anchovies.getInt();
+                Variables.foodID = FoodTypes.Foods.Anchovies.getID();
                 break;
             case "sardine":
-                Variables.foodID = FoodTypes.Foods.Sardine.getInt();
+                Variables.foodID = FoodTypes.Foods.Sardine.getID();
                 break;
             case "herring":
-                Variables.foodID = FoodTypes.Foods.Herring.getInt();
+                Variables.foodID = FoodTypes.Foods.Herring.getID();
                 break;
             case "mackerel":
-                Variables.foodID = FoodTypes.Foods.Mackerel.getInt();
+                Variables.foodID = FoodTypes.Foods.Mackerel.getID();
                 break;
             case "trout":
-                Variables.foodID = FoodTypes.Foods.Trout.getInt();
+                Variables.foodID = FoodTypes.Foods.Trout.getID();
                 break;
             case "cod":
-                Variables.foodID = FoodTypes.Foods.Cod.getInt();
+                Variables.foodID = FoodTypes.Foods.Cod.getID();
                 break;
             case "pike":
-                Variables.foodID = FoodTypes.Foods.Pike.getInt();
+                Variables.foodID = FoodTypes.Foods.Pike.getID();
                 break;
             case "salmon":
-                Variables.foodID = FoodTypes.Foods.Salmon.getInt();
+                Variables.foodID = FoodTypes.Foods.Salmon.getID();
                 break;
             case "tuna":
-                Variables.foodID = FoodTypes.Foods.Tuna.getInt();
+                Variables.foodID = FoodTypes.Foods.Tuna.getID();
                 break;
             case "lobster":
-                Variables.foodID = FoodTypes.Foods.Lobster.getInt();
+                Variables.foodID = FoodTypes.Foods.Lobster.getID();
                 break;
             case "bass":
-                Variables.foodID = FoodTypes.Foods.Bass.getInt();
+                Variables.foodID = FoodTypes.Foods.Bass.getID();
                 break;
             case "swordfish":
-                Variables.foodID = FoodTypes.Foods.Swordfish.getInt();
+                Variables.foodID = FoodTypes.Foods.Swordfish.getID();
                 break;
             case "monkfish":
-                Variables.foodID = FoodTypes.Foods.Monkfish.getInt();
+                Variables.foodID = FoodTypes.Foods.Monkfish.getID();
                 break;
             case "shark":
-                Variables.foodID = FoodTypes.Foods.Shark.getInt();
+                Variables.foodID = FoodTypes.Foods.Shark.getID();
                 break;
             case "sea turtle":
-                Variables.foodID = FoodTypes.Foods.Turtle.getInt();
+                Variables.foodID = FoodTypes.Foods.Turtle.getID();
                 break;
             case "manta ray":
-                Variables.foodID = FoodTypes.Foods.MantaRay.getInt();
+                Variables.foodID = FoodTypes.Foods.MantaRay.getID();
                 break;
             case "rocktail":
-                Variables.foodID = FoodTypes.Foods.Rocktail.getInt();
+                Variables.foodID = FoodTypes.Foods.Rocktail.getID();
                 break;
         }
 
@@ -176,6 +175,7 @@ public class GUI extends javax.swing.JFrame {
         }
 
         Variables.guiDisposed = true;
+        setVisible(false);
         dispose();
     }
 

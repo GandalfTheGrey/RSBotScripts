@@ -1,30 +1,25 @@
-package com.rsbot.roguescooker.Nodes;
+package com.rsbot.roguescooker.nodes;
 
-import com.rsbot.roguescooker.Utils.Methods;
-import com.rsbot.roguescooker.Variables.Variables;
+import com.rsbot.roguescooker.utils.Methods;
+import com.rsbot.roguescooker.vars.Variables;
 import org.powerbot.core.script.job.state.Node;
-import org.powerbot.core.script.methods.Calculations;
-import org.powerbot.core.script.methods.Players;
+import org.powerbot.game.api.methods.Calculations;
 import org.powerbot.game.api.methods.Walking;
+import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.node.SceneEntities;
+import org.powerbot.game.api.methods.widget.Bank;
 import org.powerbot.game.api.methods.widget.Camera;
 import org.powerbot.game.api.wrappers.node.SceneObject;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Romi Grace
- * Date: 01/06/13
- * Time: 09:08
- * To change this template use File | Settings | File Templates.
- */
 public class UseFire extends Node {
-    final SceneObject fire = SceneEntities.getNearest(100);
+    final SceneObject fire = SceneEntities.getNearest(2732);
 
     public boolean activate() {
         return Variables.guiDisposed
-                && Methods.hasSelectedFood()
+                && Methods.hasSelectedFood(Variables.foodID)
                 && Methods.hasItems(Variables.foodID)
-                && !Methods.isCooking();
+                && !Methods.isCooking()
+                && !Bank.isOpen();
     }
 
     public void execute() {
@@ -40,11 +35,16 @@ public class UseFire extends Node {
 
         if (fire != null) {
             if (fire.isOnScreen()) {
-                if (Methods.hasSelectedFood()) {
-                    Variables.Status = ("Clicking Fire!");
-                    fire.click(true);
+                if (Methods.hasSelectedFood(Variables.foodID)) {
+                    if (!Methods.cookFood()) {
+                        fire.click(true);
+                    }
                 }
             }
+        }
+
+        if (Methods.cookFood()) {
+            Methods.COOK_BUTTON.click(true);
         }
     }
 }
